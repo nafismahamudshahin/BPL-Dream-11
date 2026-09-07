@@ -1,6 +1,14 @@
+import type { Dispatch, SetStateAction } from "react";
 import type { IPlayerType } from "../types/types";
-
-const PlayerCard = ({ player }: { player: IPlayerType }) => {
+interface IPlayerTypeCardPromise {
+    player: IPlayerType,
+    selectdPlayers: IPlayerType[],
+    setSelectedPlayers: Dispatch<SetStateAction<IPlayerType[]>>,
+}
+const PlayerCard = ({ player, selectdPlayers, setSelectedPlayers }: IPlayerTypeCardPromise) => {
+    const handlePlayerSelected = (player: IPlayerType): void => {
+        setSelectedPlayers([...selectdPlayers, player])
+    }
     return (
         <div className="group w-full max-w-sm overflow-hidden rounded-2xl border border-base-300 bg-base-100 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
             {/* Player Image */}
@@ -142,7 +150,7 @@ const PlayerCard = ({ player }: { player: IPlayerType }) => {
                 {/* Select Button */}
                 <div className="card-actions mt-5">
 
-                    <button className="btn btn-primary w-full rounded-xl text-base font-semibold">
+                    <button disabled={selectdPlayers.find(s => s.id === player.id) ? true : false} onClick={() => handlePlayerSelected(player)} className="btn btn-primary w-full rounded-xl text-base font-semibold">
                         Select Player
                     </button>
 

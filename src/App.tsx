@@ -10,7 +10,6 @@ const playersPromise = async (): Promise<IPlayerType[]> => {
   return data;
 }
 function App() {
-
   return (
     <>
       <Navbar></Navbar>
