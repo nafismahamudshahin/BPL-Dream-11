@@ -1,5 +1,6 @@
 import type { Dispatch, SetStateAction } from "react";
 import type { IPlayerType } from "../types/types";
+import { toast } from "react-toastify";
 interface IPlayerTypeCardPromise {
     player: IPlayerType,
     selectdPlayers: IPlayerType[],
@@ -7,7 +8,12 @@ interface IPlayerTypeCardPromise {
 }
 const PlayerCard = ({ player, selectdPlayers, setSelectedPlayers }: IPlayerTypeCardPromise) => {
     const handlePlayerSelected = (player: IPlayerType): void => {
-        setSelectedPlayers([...selectdPlayers, player])
+        if (selectdPlayers.length < 11) {
+            setSelectedPlayers([...selectdPlayers, player]);
+            toast.success(`You purcess ${player.name} with ${player.price}`);
+        } else {
+            toast.error("Your Selection is Complate.");
+        }
     }
     return (
         <div className="group w-full max-w-sm overflow-hidden rounded-2xl border border-base-300 bg-base-100 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">

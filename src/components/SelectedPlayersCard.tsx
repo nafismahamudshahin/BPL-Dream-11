@@ -1,13 +1,15 @@
 import { MdDeleteOutline } from "react-icons/md";
 import type { IPlayerType } from "../types/types";
 import type { Dispatch, SetStateAction } from "react";
+import { toast } from "react-toastify";
 
 const SelectedPlayersCard = ({ player, setSelectedPlayers }: { player: IPlayerType, setSelectedPlayers: Dispatch<SetStateAction<IPlayerType[]>> }) => {
-    const handleEventRemove = (id: number): void => {
+    const handleEventRemove = (player: IPlayerType): void => {
         setSelectedPlayers(previous => {
-            const filteredAfterRemove = previous.filter(p => p.id !== id);
+            const filteredAfterRemove = previous.filter(p => p.id !== player.id);
             return [...filteredAfterRemove];
         })
+        toast.success(`You successfully remove ${player.name}`);
     }
     return (
         <div className=" flex items-center justify-between w-full min-h-[82px] rounded-xl border border-gray-200 bg-white px-4 py-3 ">
@@ -38,7 +40,7 @@ const SelectedPlayersCard = ({ player, setSelectedPlayers }: { player: IPlayerTy
             </div>
 
             {/* Delete Button */}
-            <button onClick={() => handleEventRemove(player.id)} className=" text-red-500 hover:text-red-600 hover:scale-110 transition">
+            <button onClick={() => handleEventRemove(player)} className=" text-red-500 hover:text-red-600 hover:scale-110 transition">
                 <MdDeleteOutline size={18} />
             </button>
 

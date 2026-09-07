@@ -13,7 +13,7 @@ const Players = ({ playersPromise }: IPlayerTypePromise) => {
     return (
         <section className="container mx-auto my-5 space-y-5">
             <div className="flex justify-between">
-                <h2 className="font-semibold text-2xl">Abailable Players</h2>
+                <h2 className="font-semibold text-2xl">{selectedButton === "abailable" ? "Abailable Players" : `Selected Player (${selectdPlayers.length}/11)`}</h2>
                 <div>
                     <button onClick={() => handleSelected("abailable")} className={`btn ${selectedButton === "abailable" ? "btn-success" : ""} border-r-0 rounded-r-none`}>Abailable</button>
                     <button onClick={() => handleSelected("selected")} className={`btn ${selectedButton === "selected" ? "btn-success" : ""} rounded-l-none`}>Selected <span>{selectdPlayers.length}</span></button>
