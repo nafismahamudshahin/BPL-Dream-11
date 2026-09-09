@@ -12,7 +12,7 @@ const playersPromise = async (): Promise<IPlayerType[]> => {
   return data;
 }
 function App() {
-  const [coin, setCoin] = useState(5000);
+  const [coin, setCoin] = useState(0);
   return (
     <>
       <Navbar coin={coin}></Navbar>
