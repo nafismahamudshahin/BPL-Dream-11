@@ -1,4 +1,4 @@
-import type { Dispatch, SetStateAction } from "react";
+import { useState, type Dispatch, type SetStateAction } from "react";
 import HeroImg from "../assets/banner-main.png"
 import HeroBg from '../assets/bg-hero.png';
 import { toast } from "react-toastify";
@@ -7,10 +7,14 @@ interface IPlayerHeroPromise {
     setCoin: Dispatch<SetStateAction<number>>
 }
 const HeroBanner = ({ coin, setCoin }: IPlayerHeroPromise) => {
+    const [credit, setCredit] = useState<boolean>(true);
     const handleFreeCreadit = (): void => {
-        if (coin > 0) {
+        if (credit && coin > 0) {
             setCoin(coin + 500);
             toast.success("Congraluction! You Got 500$ coin Free.");
+            setCredit(false);
+        } else if (!credit) {
+            toast.error("Already claim free credit.")
         } else {
             toast.error("First you need to one Time deposit atleast $2000")
         }
