@@ -2,9 +2,16 @@ import { MdDeleteOutline } from "react-icons/md";
 import type { IPlayerType } from "../types/types";
 import type { Dispatch, SetStateAction } from "react";
 import { toast } from "react-toastify";
+interface IPlayerPromise {
+    player: IPlayerType,
+    setSelectedPlayers: Dispatch<SetStateAction<IPlayerType[]>>,
+    coin: number,
+    setCoin: Dispatch<SetStateAction<number>>,
 
-const SelectedPlayersCard = ({ player, setSelectedPlayers }: { player: IPlayerType, setSelectedPlayers: Dispatch<SetStateAction<IPlayerType[]>> }) => {
+}
+const SelectedPlayersCard = ({ player, setSelectedPlayers, coin, setCoin }: IPlayerPromise) => {
     const handleEventRemove = (player: IPlayerType): void => {
+        setCoin(coin + player.price);
         setSelectedPlayers(previous => {
             const filteredAfterRemove = previous.filter(p => p.id !== player.id);
             return [...filteredAfterRemove];

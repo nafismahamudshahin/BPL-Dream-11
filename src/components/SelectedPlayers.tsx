@@ -5,8 +5,10 @@ import SelectedPlayersCard from "./SelectedPlayersCard";
 interface IPlayerTypeSelected {
     selectdPlayers: IPlayerType[],
     setSelectedPlayers: Dispatch<SetStateAction<IPlayerType[]>>,
+    coin: number,
+    setCoin: Dispatch<SetStateAction<number>>,
 }
-const SelectedPlayers = ({ selectdPlayers, setSelectedPlayers }: IPlayerTypeSelected) => {
+const SelectedPlayers = ({ selectdPlayers, setSelectedPlayers, coin, setCoin }: IPlayerTypeSelected) => {
     return (
         <div className="container mx-auto">
             {
@@ -14,7 +16,7 @@ const SelectedPlayers = ({ selectdPlayers, setSelectedPlayers }: IPlayerTypeSele
                     {
                         selectdPlayers.map(player => {
                             return (
-                                <SelectedPlayersCard key={player.id} player={player} setSelectedPlayers={setSelectedPlayers}></SelectedPlayersCard>
+                                <SelectedPlayersCard key={player.id} player={player} coin={coin} setCoin={setCoin} setSelectedPlayers={setSelectedPlayers}></SelectedPlayersCard>
                             )
                         })
                     }

@@ -14,8 +14,8 @@
         "halfCenturies": 140,
         "average": 54.2,
         "strikeRate": 92.8,
-        "price": 15000000,
-        "currency": "BDT",
+        "price": 150,
+        "currency": "USD",
         "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Virat%20Kohli.jpg"
     },
     {
@@ -33,8 +33,8 @@
         "halfCenturies": 110,
         "average": 49.8,
         "strikeRate": 88.5,
-        "price": 13500000,
-        "currency": "BDT",
+        "price": 130,
+        "currency": "USD",
         "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Babar%20Azam.png"
     },
     {
@@ -52,8 +52,8 @@
         "halfCenturies": 120,
         "average": 51.6,
         "strikeRate": 86.4,
-        "price": 14000000,
-        "currency": "BDT",
+        "price": 140,
+        "currency": "USD",
         "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Joe%20root.jpg"
     },
     {
@@ -71,8 +71,8 @@
         "halfCenturies": 105,
         "average": 52.3,
         "strikeRate": 84.7,
-        "price": 13000000,
-        "currency": "BDT",
+        "price": 100,
+        "currency": "USD",
         "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Kane%20Williamson.jpg"
     },
     {
@@ -90,8 +90,8 @@
         "halfCenturies": 115,
         "average": 48.9,
         "strikeRate": 91.2,
-        "price": 14500000,
-        "currency": "BDT",
+        "price": 140,
+        "currency": "USD",
         "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rohit%20Sharma.jpg"
     },
     {
@@ -109,8 +109,8 @@
         "halfCenturies": 55,
         "average": 48.5,
         "strikeRate": 94.3,
-        "price": 12000000,
-        "currency": "BDT",
+        "price": 120,
+        "currency": "USD",
         "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Shubman%20Gill.jpg"
     },
     {
@@ -127,8 +127,8 @@
         "wickets": 650,
         "bowlingAverage": 22.4,
         "economyRate": 4.2,
-        "price": 16000000,
-        "currency": "BDT",
+        "price": 160,
+        "currency": "USD",
         "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jasprit%20Bumrah.jpg"
     },
     {
@@ -145,8 +145,8 @@
         "wickets": 500,
         "bowlingAverage": 23.1,
         "economyRate": 4.8,
-        "price": 12500000,
-        "currency": "BDT",
+        "price": 120,
+        "currency": "USD",
         "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Shaheen%20Afridi.jpg"
     },
     {
@@ -163,8 +163,8 @@
         "wickets": 560,
         "bowlingAverage": 25.2,
         "economyRate": 4.5,
-        "price": 15500000,
-        "currency": "BDT",
+        "price": 155,
+        "currency": "USD",
         "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pat%20Cummins.jpg"
     },
     {
@@ -181,8 +181,8 @@
         "centuries": 20,
         "halfCenturies": 70,
         "wickets": 300,
-        "price": 15000000,
-        "currency": "BDT",
+        "price": 150,
+        "currency": "USD",
         "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ben%20Stokes.jpg"
     },
     {
@@ -199,8 +199,8 @@
         "centuries": 25,
         "halfCenturies": 95,
         "wickets": 700,
-        "price": 11000000,
-        "currency": "BDT",
+        "price": 100,
+        "currency": "USD",
         "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Shakib%20Al%20Hasan.jpg"
     },
     {
@@ -217,8 +217,8 @@
         "wickets": 650,
         "bowlingAverage": 18.7,
         "economyRate": 5.1,
-        "price": 13500000,
-        "currency": "BDT",
+        "price": 130,
+        "currency": "USD",
         "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rashid%20Khan.jpg"
     },
     {
@@ -236,8 +236,8 @@
         "halfCenturies": 85,
         "average": 42.6,
         "strikeRate": 145.2,
-        "price": 12500000,
-        "currency": "BDT",
+        "price": 125,
+        "currency": "USD",
         "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jos%20buttler.JPG"
     },
     {
@@ -255,8 +255,8 @@
         "halfCenturies": 60,
         "average": 46.8,
         "strikeRate": 135.4,
-        "price": 12000000,
-        "currency": "BDT",
+        "price": 1200,
+        "currency": "USD",
         "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Travis%20Head.jpg"
     },
     {
@@ -273,8 +273,8 @@
         "wickets": 570,
         "bowlingAverage": 24.1,
         "economyRate": 4.7,
-        "price": 11500000,
-        "currency": "BDT",
+        "price": 115,
+        "currency": "USD",
         "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Kagiso%20Rabada.jpg"
     },
     {
@@ -291,8 +291,8 @@
         "wickets": 400,
         "bowlingAverage": 25.8,
         "economyRate": 7.2,
-        "price": 9500000,
-        "currency": "BDT",
+        "price": 950,
+        "currency": "USD",
         "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mustafizur%20Rahman.jpg"
     },
     {
@@ -309,8 +309,8 @@
         "centuries": 8,
         "halfCenturies": 42,
         "wickets": 120,
-        "price": 10000000,
-        "currency": "BDT",
+        "price": 1000,
+        "currency": "USD",
         "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Liam%20Livingstone.jpg"
     },
     {
@@ -328,8 +328,8 @@
         "halfCenturies": 55,
         "average": 38.5,
         "strikeRate": 142.8,
-        "price": 10500000,
-        "currency": "BDT",
+        "price": 100,
+        "currency": "USD",
         "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicholas%20Pooran.jpg"
     },
     {
@@ -347,8 +347,8 @@
         "halfCenturies": 60,
         "average": 41.3,
         "strikeRate": 132.6,
-        "price": 13000000,
-        "currency": "BDT",
+        "price": 1300,
+        "currency": "USD",
         "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rishabh%20Pant.jpg"
     },
     {
@@ -365,8 +365,8 @@
         "centuries": 8,
         "halfCenturies": 35,
         "wickets": 350,
-        "price": 9000000,
-        "currency": "BDT",
+        "price": 900,
+        "currency": "USD",
         "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mehidy%20Hasan%20Miraz.jpg"
     }
 ]

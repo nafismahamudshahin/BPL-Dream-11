@@ -1,9 +1,15 @@
-import { use, useState } from "react";
-import type { IPlayerType, IPlayerTypePromise } from "../types/types";
+import { use, useState, type Dispatch, type SetStateAction } from "react";
+import type { IPlayerType } from "../types/types";
 import PlayerCard from "./PlayerCard";
 import SelectedPlayers from "./SelectedPlayers";
 
-const Players = ({ playersPromise }: IPlayerTypePromise) => {
+interface IPlayerTypeCoinPromise {
+    playersPromise: Promise<IPlayerType[]>,
+    coin: number,
+    setCoin: Dispatch<SetStateAction<number>>,
+}
+
+const Players = ({ playersPromise, coin, setCoin }: IPlayerTypeCoinPromise) => {
     const players = use(playersPromise);
     const [selectedButton, setSelectedButton] = useState("abailable");
     const [selectdPlayers, setSelectedPlayers] = useState<IPlayerType[]>([]);
@@ -24,11 +30,11 @@ const Players = ({ playersPromise }: IPlayerTypePromise) => {
                     {
                         players.map(player => {
                             return (
-                                <PlayerCard key={player.id} player={player} selectdPlayers={selectdPlayers} setSelectedPlayers={setSelectedPlayers}></PlayerCard>
+                                <PlayerCard key={player.id} player={player} coin={coin} setCoin={setCoin} selectdPlayers={selectdPlayers} setSelectedPlayers={setSelectedPlayers}></PlayerCard>
                             )
                         })
                     }
-                </div> : <SelectedPlayers selectdPlayers={selectdPlayers} setSelectedPlayers={setSelectedPlayers}></SelectedPlayers>
+                </div> : <SelectedPlayers selectdPlayers={selectdPlayers} setSelectedPlayers={setSelectedPlayers} coin={coin} setCoin={setCoin}></SelectedPlayers>
             }
         </section>
     );

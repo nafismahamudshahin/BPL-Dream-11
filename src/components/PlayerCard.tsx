@@ -5,12 +5,20 @@ interface IPlayerTypeCardPromise {
     player: IPlayerType,
     selectdPlayers: IPlayerType[],
     setSelectedPlayers: Dispatch<SetStateAction<IPlayerType[]>>,
+    coin: number,
+    setCoin: Dispatch<SetStateAction<number>>,
 }
-const PlayerCard = ({ player, selectdPlayers, setSelectedPlayers }: IPlayerTypeCardPromise) => {
+
+const PlayerCard = ({ player, selectdPlayers, setSelectedPlayers, coin, setCoin }: IPlayerTypeCardPromise) => {
     const handlePlayerSelected = (player: IPlayerType): void => {
         if (selectdPlayers.length < 11) {
-            setSelectedPlayers([...selectdPlayers, player]);
-            toast.success(`You purcess ${player.name} with ${player.price}`);
+            if (coin >= player.price) {
+                setSelectedPlayers([...selectdPlayers, player]);
+                setCoin(coin - player.price);
+                toast.success(`You purcess ${player.name} with ${player.price}`);
+            } else {
+                toast.error("Your coin is not enough to purcess this player.");
+            }
         } else {
             toast.error("Your Selection is Complate.");
         }

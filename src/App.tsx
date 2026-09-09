@@ -1,8 +1,9 @@
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import HeroBanner from "./components/HeroBanner"
 import Navbar from "./components/Navbar"
 import Players from "./components/Players"
 import type { IPlayerType } from "./types/types";
+import Newsletter from "./components/Newsletter";
 
 const playersPromise = async (): Promise<IPlayerType[]> => {
   const res = await fetch("/players.json");
@@ -10,13 +11,15 @@ const playersPromise = async (): Promise<IPlayerType[]> => {
   return data;
 }
 function App() {
+  const [coin, setCoin] = useState(5000);
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar coin={coin}></Navbar>
       <HeroBanner></HeroBanner>
       <Suspense fallback={<span className="loading loading-spinner text-primary"></span>}>
-        <Players playersPromise={playersPromise()}></Players>
+        <Players playersPromise={playersPromise()} coin={coin} setCoin={setCoin}></Players>
       </Suspense>
+      <Newsletter></Newsletter>
     </>
   )
 }
