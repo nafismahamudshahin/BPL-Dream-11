@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar"
 import Players from "./components/Players"
 import type { IPlayerType } from "./types/types";
 import Newsletter from "./components/Newsletter";
+import Footer from "./components/Footer";
 
 const playersPromise = async (): Promise<IPlayerType[]> => {
   const res = await fetch("/players.json");
@@ -20,6 +21,7 @@ function App() {
         <Players playersPromise={playersPromise()} coin={coin} setCoin={setCoin}></Players>
       </Suspense>
       <Newsletter></Newsletter>
+      <Footer></Footer>
     </>
   )
 }
