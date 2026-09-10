@@ -13,12 +13,15 @@ const playersPromise = async (): Promise<IPlayerType[]> => {
 }
 function App() {
   const [coin, setCoin] = useState(0);
+  const [search, setSearch] = useState<string>("");
+
+
   return (
     <>
-      <Navbar coin={coin}></Navbar>
+      <Navbar coin={coin} setSearch={setSearch}></Navbar>
       <HeroBanner coin={coin} setCoin={setCoin}></HeroBanner>
       <Suspense fallback={<span className="loading loading-spinner text-primary"></span>}>
-        <Players playersPromise={playersPromise()} coin={coin} setCoin={setCoin}></Players>
+        <Players playersPromise={playersPromise()} search={search} coin={coin} setCoin={setCoin}></Players>
       </Suspense>
       <Newsletter></Newsletter>
       <Footer></Footer>

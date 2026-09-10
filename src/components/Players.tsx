@@ -2,20 +2,27 @@ import { use, useState, type Dispatch, type SetStateAction } from "react";
 import type { IPlayerType } from "../types/types";
 import PlayerCard from "./PlayerCard";
 import SelectedPlayers from "./SelectedPlayers";
-import { toast } from "react-toastify";
 
 interface IPlayerTypeCoinPromise {
     playersPromise: Promise<IPlayerType[]>,
     coin: number,
     setCoin: Dispatch<SetStateAction<number>>,
+    search: string
 }
 
-const Players = ({ playersPromise, coin, setCoin }: IPlayerTypeCoinPromise) => {
+const Players = ({ playersPromise, coin, setCoin, search }: IPlayerTypeCoinPromise) => {
     const players = use(playersPromise);
     const [selectedButton, setSelectedButton] = useState("abailable");
     const [selectdPlayers, setSelectedPlayers] = useState<IPlayerType[]>([]);
 
-
+    const filteredPlayers = players.filter(player => {
+        if (player.name.toLowerCase().includes(search) || player.country.toLowerCase().includes(search) || player.role.toLowerCase().includes(search)) {
+            return true;
+        } else {
+            return false;
+        }
+    })
+    console.log(filteredPlayers)
     const handleSelected = (action: "selected" | "abailable") => {
         setSelectedButton(action);
     }
@@ -23,7 +30,7 @@ const Players = ({ playersPromise, coin, setCoin }: IPlayerTypeCoinPromise) => {
         <section className="container mx-auto my-5 space-y-5">
 
             <div className="flex justify-between">
-                <h2 className="font-semibold text-2xl">{selectedButton === "abailable" ? "Abailable Players" : `Selected Player (${selectdPlayers.length}/11)`}</h2>
+                <h2 className="font-semibold text-2xl">{selectedButton === "abailable" ? `Abailable Players ( ${filteredPlayers.length} )` : `Selected Player (${selectdPlayers.length}/11)`}</h2>
                 <div>
                     <button onClick={() => handleSelected("abailable")} className={`btn ${selectedButton === "abailable" ? "btn-success" : ""} border-r-0 rounded-r-none`}>Abailable</button>
                     <button onClick={() => handleSelected("selected")} className={`btn ${selectedButton === "selected" ? "btn-success" : ""} rounded-l-none`}>Selected <span>{selectdPlayers.length}</span></button>
@@ -32,7 +39,7 @@ const Players = ({ playersPromise, coin, setCoin }: IPlayerTypeCoinPromise) => {
             {
                 selectedButton === "abailable" ? <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {
-                        players.map(player => {
+                        filteredPlayers.map(player => {
                             return (
                                 <PlayerCard key={player.id} player={player} coin={coin} setCoin={setCoin} selectdPlayers={selectdPlayers} setSelectedPlayers={setSelectedPlayers}></PlayerCard>
                             )
