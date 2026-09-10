@@ -1,4 +1,4 @@
-import type { Dispatch, SetStateAction } from "react";
+import { useState, type Dispatch, type SetStateAction } from "react";
 import type { IPlayerType } from "../types/types";
 import { toast } from "react-toastify";
 interface IPlayerTypeCardPromise {
@@ -10,12 +10,14 @@ interface IPlayerTypeCardPromise {
 }
 
 const PlayerCard = ({ player, selectdPlayers, setSelectedPlayers, coin, setCoin }: IPlayerTypeCardPromise) => {
+    const [seleted, setSelected] = useState(false);
     const handlePlayerSelected = (player: IPlayerType): void => {
         if (selectdPlayers.length < 11) {
             if (coin >= player.price) {
                 setSelectedPlayers([...selectdPlayers, player]);
                 setCoin(coin - player.price);
                 toast.success(`You purcess ${player.name} with ${player.price}`);
+                setSelected(true)
             } else {
                 toast.error("Your coin is not enough to purcess this player.");
             }
@@ -164,14 +166,16 @@ const PlayerCard = ({ player, selectdPlayers, setSelectedPlayers, coin, setCoin 
                 {/* Select Button */}
                 <div className="card-actions mt-5">
 
-                    <button disabled={selectdPlayers.find(s => s.id === player.id) ? true : false} onClick={() => handlePlayerSelected(player)} className="btn btn-primary w-full rounded-xl text-base font-semibold">
-                        Select Player
+                    <button disabled={seleted} onClick={() => handlePlayerSelected(player)} className="btn btn-primary w-full rounded-xl text-base font-semibold">
+                        {
+                            seleted ? "Selected" : "Select Player"
+                        }
                     </button>
 
                 </div>
 
             </div>
-        </div>
+        </div >
     );
 };
 
